@@ -1,189 +1,122 @@
 ---
-title: API Reference
+title: API Documentation - tronalddump.io
 
 language_tabs:
   - shell
-  - ruby
-  - python
-  - javascript
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
+  - <a href='https://www.tronalddump.io/'>www</a>
 
 includes:
   - errors
 
 search: true
+
 ---
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+[Api](https://api.tronalddump.io) & [web archive](https://www.tronalddump.io) for the dumbest things Donald Trump has ever said.
 
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+# Quotes
 
-This example API documentation page was created with [Slate](https://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
-
-# Authentication
-
-> To authorize, use this code:
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
+## Search quotes
 
 ```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
+curl --request GET \
+  --url 'https://api.tronalddump.io/search/quote?query=obama' \
+  --header 'accept: application/hal+json'
 ```
 
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-```
-
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-
-# Kittens
-
-## Get All Kittens
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
-
-This endpoint retrieves all kittens.
-
-### HTTP Request
-
-`GET http://example.com/api/kittens`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
-
-> The above command returns JSON structured like this:
+> The above command returns hal+json structured like this:
 
 ```json
 {
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+	"count": 25,
+	"total": 68,
+	"_embedded": {
+		"quotes": [
+		]
+	},
+	"_links": {
+		"self": {
+			"href": "/search/quote?query={query}&page={page}"
+		},
+		"prev": {
+			"href": "/search/quote?query={query}"
+		},
+		"first": {
+			"href": "/search/quote?query={query}"
+		},
+		"last": {
+			"href": "/search/quote?query={query}&page={page}"
+		}
+	}
 }
 ```
 
-This endpoint retrieves a specific kitten.
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+Free text search for quotes.
 
 ### HTTP Request
 
-`GET http://example.com/kittens/<ID>`
+`GET https://api.tronalddump.io/search/quote?query={query}`
 
-### URL Parameters
+### Query Parameters
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
+Parameter | Type | Description
+--------- | ------- | -----------
+query | String | The search query must be at least 3 characters long
+page | Integer | The page number
 
+## Get quote
+
+```shell
+curl --request GET \
+  --url 'https://api.tronalddump.io/quote/VHKwB8crTte7--FqtIxq9A' \
+  --header 'accept: application/hal+json'
+```
+> The above command returns hal+json structured like this:
+
+```json
+{
+	"appeared_at": "2016-05-09T16:56:36",
+	"author": {
+		"created_at": "2016-11-14T01:14:02.096776",
+		"author_id": "wVE8Y7BoRKCBkxs1JkqAvw",
+		"name": "Donald Trump",
+		"slug": "donald-trump",
+		"updated_at": "2016-11-14T01:14:02.096776"
+	},
+	"created_at": "2016-11-20T01:28:46.984505",
+	"quote_id": "VHKwB8crTte7--FqtIxq9A",
+	"tags": [
+		"Hillary Clinton"
+	],
+	"source": {
+		"created_at": "2016-11-20T01:28:46.978828",
+		"quote_source_id": "dVlTsUW4SOqm_gJIM7Qysw",
+		"updated_at": "2016-11-20T01:28:46.978828",
+		"url": "https://twitter.com/realDonaldTrump/status/729716712124362754"
+	},
+	"updated_at": "2016-11-20T01:28:46.984505",
+	"value": "Crooked Hillary Clinton says that she got more primary votes than Donald Trump. But I had 17 people to beat—she had one!",
+	"_links": {
+		"self": {
+			"href": "/quote/VHKwB8crTte7--FqtIxq9A"
+		}
+	}
+}
+```
+
+Retrieve a quote by a given quote id.
+
+### HTTP Request
+
+`GET https://api.tronalddump.io/quote/{id}`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+id | String | The quote id
