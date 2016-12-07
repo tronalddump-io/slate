@@ -68,6 +68,7 @@ Parameter | Type | Description
 --------- | ------- | -----------
 query | String | The search query must be at least 3 characters long
 page | Integer | The page number
+size | Integer | The page size, value must be between 5 and 25 (default 25)
 
 ## Get tags
 
