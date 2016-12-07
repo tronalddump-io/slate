@@ -126,3 +126,13 @@ Retrieve a quote by a given quote id.
 Parameter | Type | Description
 --------- | ------- | -----------
 id | String | The quote id
+
+## Get random quote
+
+Retrieve a random quote.
+
+```shell
+curl --request GET \
+  --url 'https://api.tronalddump.io/random/quote/' \
+  --header 'accept: application/hal+json'
+```
