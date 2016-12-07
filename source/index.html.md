@@ -69,6 +69,36 @@ Parameter | Type | Description
 query | String | The search query must be at least 3 characters long
 page | Integer | The page number
 
+## Get tags
+
+Retrieve a list of available tags.
+
+```shell
+curl --request GET \
+  --url 'https://api.tronalddump.io/tags \
+  --header 'accept: application/hal+json'
+```
+
+```json
+{
+	"count": 6,
+	"total": 6,
+	"_embedded": [
+		"Hillary Clinton",
+		"Ted Cruz",
+		"Jeb Bush",
+		"Marco Rubio",
+		"Mexico",
+		"Money"
+	],
+	"_links": {
+		"self": {
+			"href": "/tags"
+		}
+	}
+}
+```
+
 ## Get quote
 
 ```shell
