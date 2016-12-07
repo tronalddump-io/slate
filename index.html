@@ -184,6 +184,32 @@
 </tr>
 </tbody></table>
 
+<h2 id="get-tags">Get tags</h2>
+
+<p>Retrieve a list of available tags.</p>
+<pre class="highlight shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'https://api.tronalddump.io/tags \
+  --header '</span>accept: application/hal+json<span class="s1">'
+</span></code></pre>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"_embedded"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"Hillary Clinton"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Ted Cruz"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Jeb Bush"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Marco Rubio"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Mexico"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Money"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nt">"_links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"self"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/tags"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
 <h2 id="get-quote">Get quote</h2>
 <pre class="highlight shell"><code>curl --request GET <span class="se">\</span>
   --url <span class="s1">'https://api.tronalddump.io/quote/VHKwB8crTte7--FqtIxq9A'</span> <span class="se">\</span>
