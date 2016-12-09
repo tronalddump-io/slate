@@ -162,6 +162,16 @@ id | String | The quote id
 
 Retrieve a random quote.
 
+### HTTP Request
+
+`GET https://api.tronalddump.io/random/quote`
+
+### Query Parameters
+
+Parameter | Type | Default | Description
+--------- | ---- | ------- | -----------
+tag | String | null | An optional tag
+
 ```shell
 curl --request GET \
   --url 'https://api.tronalddump.io/random/quote/' \
