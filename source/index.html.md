@@ -111,38 +111,37 @@ curl --request GET \
 
 ```json
 {
-	"appeared_at": "2016-05-09T16:56:36",
-	"created_at": "2016-11-20T01:35:43.157523",
-	"quote_id": "VHKwB8crTte7--FqtIxq9A",
-	"tags": [
-		"Hillary Clinton"
-	],
-	"updated_at": "2016-11-20T01:35:43.157523",
-	"value": "Crooked Hillary Clinton says that she got more primary votes than Donald Trump. But I had 17 people to beat—she had one!",
-	"_links": {
-		"self": {
-			"href": "/quote/VHKwB8crTte7--FqtIxq9A"
-		}
-	},
-	"_embedded": {
-		"autor": [
-			{
-				"created_at": "2016-11-14T01:14:02.096776",
-				"author_id": "wVE8Y7BoRKCBkxs1JkqAvw",
-				"name": "Donald Trump",
-				"slug": "donald-trump",
-				"updated_at": "2016-11-14T01:14:02.096776"
-			}
-		],
-		"source": [
-			{
-				"created_at": "2016-11-20T01:35:41.652179",
-				"quote_source_id": "WMqsW5mDQrqSbWzqiTBB_w",
-				"updated_at": "2016-11-20T01:35:41.652179",
-				"url": "https://twitter.com/realDonaldTrump/status/729716712124362754"
-			}
-		]
-	}
+    "appeared_at": "2016-05-09T16:56:36",
+    "created_at": "2016-11-20T01:35:43.157523",
+    "quote_id": "VHKwB8crTte7--FqtIxq9A",
+    "tags": [
+        "Hillary Clinton"
+    ],
+    "updated_at": "2016-11-20T01:35:43.157523",
+    "value": "Crooked Hillary Clinton says that she got more primary votes than Donald Trump. But I had 17 people to beat—she had one!",
+    "_links": {
+        "self": {
+            "href": "/quote/VHKwB8crTte7--FqtIxq9A"
+        }
+    },
+    "_embedded": {
+        "autor": [{
+            "created_at": "2016-11-14T01:14:02.096776",
+            "bio": null,
+            "author_id": "wVE8Y7BoRKCBkxs1JkqAvw",
+            "name": "Donald Trump",
+            "slug": "donald-trump",
+            "updated_at": "2016-11-14T01:14:02.096776"
+        }],
+        "source": [{
+            "created_at": "2016-11-20T01:35:41.652179",
+            "filename": null,
+            "quote_source_id": "WMqsW5mDQrqSbWzqiTBB_w",
+            "remarks": null,
+            "updated_at": "2016-11-20T01:35:41.652179",
+            "url": "https://twitter.com/realDonaldTrump/status/729716712124362754"
+        }]
+    }
 }
 ```
 
