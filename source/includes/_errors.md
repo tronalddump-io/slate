@@ -1,6 +1,17 @@
 # Errors
 
-The tronalddump api uses the following error codes:
+```shell
+curl --request GET \
+  --url 'https://api.tronalddump.io/foo'
+```
+```json
+{
+	"status": 404,
+	"message": "No route found for \"GET /foo\""
+}
+```
+
+The tronalddump api uses the following error codes, which are send in the payload and as a http status code in the response headers.
 
 Error | Meaning
 ---------- | -------

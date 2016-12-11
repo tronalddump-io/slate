@@ -159,6 +159,12 @@ id | String | The quote id
 
 ## Get random quote
 
+```shell
+curl --request GET \
+  --url 'https://api.tronalddump.io/random/quote/' \
+  --header 'accept: application/hal+json'
+```
+
 Retrieve a random quote.
 
 ### HTTP Request
@@ -170,9 +176,3 @@ Retrieve a random quote.
 Parameter | Type | Default | Description
 --------- | ---- | ------- | -----------
 tag | String | null | An optional tag
-
-```shell
-curl --request GET \
-  --url 'https://api.tronalddump.io/random/quote/' \
-  --header 'accept: application/hal+json'
-```
