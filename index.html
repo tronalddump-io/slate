@@ -282,6 +282,10 @@
 </tbody></table>
 
 <h2 id="get-random-quote">Get random quote</h2>
+<pre class="highlight shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'https://api.tronalddump.io/random/quote/'</span> <span class="se">\</span>
+  --header <span class="s1">'accept: application/hal+json'</span>
+</code></pre>
 
 <p>Retrieve a random quote.</p>
 
@@ -306,14 +310,18 @@
 <td>An optional tag</td>
 </tr>
 </tbody></table>
-<pre class="highlight shell"><code>curl --request GET <span class="se">\</span>
-  --url <span class="s1">'https://api.tronalddump.io/random/quote/'</span> <span class="se">\</span>
-  --header <span class="s1">'accept: application/hal+json'</span>
-</code></pre>
 
           <h1 id="errors">Errors</h1>
+<pre class="highlight shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'https://api.tronalddump.io/foo'</span>
+</code></pre>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">404</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No route found for \"GET /foo\""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
-<p>The tronalddump api uses the following error codes:</p>
+<p>The tronalddump api uses the following error codes, which are send in the payload and as a http status code in the response headers.</p>
 
 <table><thead>
 <tr>
