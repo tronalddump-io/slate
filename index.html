@@ -283,7 +283,7 @@
 
 <h2 id="get-random-quote">Get random quote</h2>
 <pre class="highlight shell"><code>curl --request GET <span class="se">\</span>
-  --url <span class="s1">'https://api.tronalddump.io/random/quote/'</span> <span class="se">\</span>
+  --url <span class="s1">'https://api.tronalddump.io/random/quote'</span> <span class="se">\</span>
   --header <span class="s1">'accept: application/hal+json'</span>
 </code></pre>
 
@@ -308,6 +308,30 @@
 <td>String</td>
 <td>null</td>
 <td>An optional tag</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-random-meme">Get random meme</h2>
+<pre class="highlight shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'https://api.tronalddump.io/random/meme'</span> <span class="se">\</span>
+  --header <span class="s1">'accept: image/jpeg'</span>
+</code></pre>
+
+<p>Retrieve a random meme as jpeg. Note that a custom header <code class="prettyprint">tronald-quote-id</code> is send in the response which represents the quote id.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>size</td>
+<td>Float</td>
+<td>1</td>
+<td>Size value ust be between 1 and 5</td>
 </tr>
 </tbody></table>
 
