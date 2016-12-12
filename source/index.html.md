@@ -161,7 +161,7 @@ id | String | The quote id
 
 ```shell
 curl --request GET \
-  --url 'https://api.tronalddump.io/random/quote/' \
+  --url 'https://api.tronalddump.io/random/quote' \
   --header 'accept: application/hal+json'
 ```
 
@@ -176,3 +176,17 @@ Retrieve a random quote.
 Parameter | Type | Default | Description
 --------- | ---- | ------- | -----------
 tag | String | null | An optional tag
+
+## Get random meme
+
+```shell
+curl --request GET \
+  --url 'https://api.tronalddump.io/random/meme' \
+  --header 'accept: image/jpeg'
+```
+
+Retrieve a random meme as jpeg. Note that a custom header `tronald-quote-id` is send in the response which represents the quote id.
+
+Parameter | Type | Default | Description
+--------- | ---- | ------- | -----------
+size | Float | 1 | Size value ust be between 1 and 5
