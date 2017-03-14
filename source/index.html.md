@@ -125,7 +125,7 @@ curl --request GET \
         }
     },
     "_embedded": {
-        "autor": [{
+        "author": [{
             "created_at": "2016-11-14T01:14:02.096776",
             "bio": null,
             "author_id": "wVE8Y7BoRKCBkxs1JkqAvw",
