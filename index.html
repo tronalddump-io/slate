@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html>
   <head>
@@ -193,7 +194,7 @@
 
 <p>Retrieve a list of available tags.</p>
 <pre class="highlight shell"><code>curl --request GET <span class="se">\</span>
-  --url <span class="s1">'https://api.tronalddump.io/tags \
+  --url <span class="s1">'https://api.tronalddump.io/tag \
   --header '</span>accept: application/hal+json<span class="s1">'
 </span></code></pre>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
@@ -212,6 +213,69 @@
             </span><span class="nt">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/tags"</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<h2 id="get-tag">Get tag</h2>
+
+<p>Retrieve a quotes by a given tag.</p>
+<pre class="highlight shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'https://api.tronalddump.io/tag/Hillary%20Clinton \
+  --header '</span>accept: application/hal+json<span class="s1">'
+</span></code></pre>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">277</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"_embedded"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+      </span><span class="nt">"appeared_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-07-30T19:55:26"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-20T01:32:07.085780"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"quote_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dxo0LpDbRlOIHs630rMK9A"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Hillary Clinton"</span><span class="p">],</span><span class="w">
+      </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-20T01:32:07.085780"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Why doesn't the media want to report that on the two \"Big Thursdays\" when Crooked Hillary and I made our speeches - Republican's won ratings"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"_links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"self"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"\/quote\/dxo0LpDbRlOIHs630rMK9A"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"_embedded"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"author"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+          </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-14T01:14:02.096776"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"bio"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"author_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wVE8Y7BoRKCBkxs1JkqAvw"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Donald Trump"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"donald-trump"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-14T01:14:02.096776"</span><span class="w">
+        </span><span class="p">}],</span><span class="w">
+        </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+          </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-20T01:32:06.695089"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"filename"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"quote_source_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GQPWKpGvQEurAep0gwwXxA"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"remarks"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-20T01:32:06.695089"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:\/\/twitter.com\/realDonaldTrump\/status\/759477522232901632"</span><span class="w">
+        </span><span class="p">}]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"_links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"self"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"\/tag\/Hillary%20Clinton?page=2"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"prev"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"\/tag\/Hillary%20Clinton"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"next"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"\/tag\/Hillary%20Clinton?page=3"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"first"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"\/tag\/Hillary%20Clinton"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"last"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"\/tag\/Hillary%20Clinton?page=12"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
